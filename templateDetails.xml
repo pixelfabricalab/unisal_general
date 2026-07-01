@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="template" client="site" method="upgrade">
+    <name>unisal_general</name>
+    <version>1.0.0</version>
+    <creationDate>2026-07</creationDate>
+    <author>Andrea Coi - Pixelfabrica Lab SRL</author>
+    <authorEmail>eurologon@pixelfabrica.it</authorEmail>
+    <description>Template di riferimento per i portali Unisal. Compatibile con Joomla 4, 5 e 6. Copiare e rinominare per ogni nuovo portale figlio.</description>
+
+    <files>
+        <filename>index.php</filename>
+        <filename>offline.php</filename>
+        <filename>component.php</filename>
+        <filename>error.php</filename>
+        <filename>common_menu.php</filename>
+        <filename>templateDetails.xml</filename>
+        <folder>assets</folder>
+        <folder>html</folder>
+    </files>
+
+    <positions>
+        <position>topbar</position>
+        <position>logo</position>
+        <position>social</position>
+        <position>search</position>
+        <position>language</position>
+        <position>menu</position>
+        <position>offcanvas</position>
+        <position>slideshow</position>
+        <position>opac</position>
+        <position>breadcrumbs</position>
+        <position>sidebar-right</position>
+        <position>below-article</position>
+        <position>video</position>
+        <position>gallery</position>
+        <position>newsletter</position>
+        <position>footer-left</position>
+        <position>footer-right</position>
+        <position>copy</position>
+        <position>debug</position>
+    </positions>
+</extension>
