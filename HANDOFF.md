@@ -221,3 +221,14 @@ Fix layout barra di ricerca con `awesomplete`. Il label è rimosso dall'override
 --unisal-red-dark:  #8e1d29;   /* rosso hover/focus */
 --unisal-red-light: #c4374a;   /* rosso accordion aperto */
 ```
+
+---
+
+## 10. Release e aggiornamenti
+
+Il workflow `.github/workflows/release.yml` pubblica automaticamente una GitHub Release con lo zip installabile ogni volta che `<version>` in `templateDetails.xml` cambia su `main`.
+
+**TODO futuro — aggiornamenti OTA:** implementare l'update server Joomla nativo, così i portali derivati potranno ricevere la notifica di nuova versione direttamente dal backend (Sistema → Gestione aggiornamenti), senza scaricare e installare lo zip manualmente. Serve:
+- aggiungere `<updateservers>` a `templateDetails.xml` con un `<server type="extension">` che punta a un `update.xml`
+- pubblicare `update.xml` in un percorso stabile (es. GitHub Pages o raw.githubusercontent.com) con `<downloads>` che rimanda allo zip della release GitHub corrispondente alla versione
+- il workflow di release dovrà rigenerare/aggiornare questo `update.xml` ad ogni release
