@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read version from templateDetails.xml
+        id: version
+        run: |
+          VERSION=$(grep -oPm1 '(?<=<version>)[^<]+' templateDetails.xml)
+          if [ -z "$VERSION" ]; then
+            echo "Impossibile leggere <version> da templateDetails.xml" >&2
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Check if tag already exists
+        id: check_tag
+        run: |
+          if git ls-remote --tags origin | grep -q "refs/tags/${{ steps.version.outputs.tag }}$"; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build template zip
+        if: steps.check_tag.outputs.exists == 'false'
+        run: |
+          zip -r "unisal_general-${{ steps.version.outputs.version }}.zip" \
+            index.php offline.php component.php error.php common_menu.php \
+            templateDetails.xml assets html
+
+      - name: Create GitHub release
+        if: steps.check_tag.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          target_commitish: ${{ github.sha }}
+          files: unisal_general-${{ steps.version.outputs.version }}.zip
+          generate_release_notes: true
