@@ -1,0 +1,1036 @@
+/* Foglio di stile Pixelfabrica 
+*  Creato il 08/08/2022 da Andrea Coi
+*  Contiene stile per aggiornamento template, mantenendo attivo Unisal
+*/
+
+@font-face{
+    font-family:"DIN-bold";
+    font-display: auto;
+    font-style:normal;
+    font-weight:normal;
+    src:url("fonts/D-DINCondensed-Bold.otf");
+    src:url("fonts/D-DINCondensed-Bold.woff") format("woff"),
+        url("fonts/D-DINCondensed-Bold.woff2") format("woff2"),
+        url("fonts/D-DINCondensed-Bold.ttf") format("truetype")
+}
+
+@font-face{
+    font-family:"DIN";
+    font-display: auto;
+    font-style:normal;
+    font-weight:normal;
+    src:url("fonts/D-DINCondensed-unisal.otf");
+    src:url("fonts/D-DINCondensed-unisal.woff") format("woff"),
+        url("fonts/D-DINCondensed-unisal.woff2") format("woff2"),
+        url("fonts/D-DINCondensed-unisal.ttf") format("truetype")
+}
+
+@font-face{
+    font-family:"DIN-alt";
+    font-display: auto;
+    font-style:normal;
+    font-weight:normal;
+    src:url("fonts/D-DINCondensed-unisal.otf");
+    src:url("fonts/D-DINCondensed-unisal.woff") format("woff"),
+        url("fonts/D-DINCondensed-unisal.woff2") format("woff2"),
+        url("fonts/D-DINCondensed-unisal.ttf") format("truetype")
+}
+
+@font-face{
+    font-family:"Source Sans Unisal";
+    font-display: auto;
+    font-style:normal;
+    font-weight:300;
+    src:url("fonts/SourceSansPro-unisal-Light.otf");
+    src:url("fonts/SourceSansPro-unisal-Light.woff") format("woff"),
+        url("fonts/SourceSansPro-unisal-Light.woff2") format("woff2"),
+        url("fonts/SourceSansPro-unisal-Light.ttf") format("truetype")
+}
+
+@font-face{
+    font-family:"Source Sans Unisal";
+  	font-display:auto;
+  	font-style:normal;
+  	font-weight:600;
+    src:url("fonts/SourceSansPro-unisal-Bold.otf");
+    src:url("fonts/SourceSansPro-unisal-Bold.woff") format("woff"),
+        url("fonts/SourceSansPro-unisal-Bold.woff2") format("woff2"),
+        url("fonts/SourceSansPro-unisal-Bold.ttf") format("truetype")
+}
+
+/* tipografia */
+
+body {
+  font-family: source-sans-pro, "Source Sans Unisal", sans-serif;
+  font-size: 1.15em;
+  line-height: 150%;
+}
+
+.no-bold {
+  font-weight: 300;
+}
+h1.no-bold a {
+  font-weight: 400 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DIN", "din-condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 100%;
+  width: 100%;
+  letter-spacing: -0.04em;
+  text-rendering: optimizeLegibility;
+}
+
+h3.biografia-emeriti {
+  margin: 10px 0 15px 0 !important;
+}
+h2.nome-professore {
+  margin: 20px 0 30px 0 !important;
+}
+
+h5.role,
+div#centri h3 {
+  margin: 5px 0;
+}
+
+h2.accordion-header {
+  margin: 0;
+}
+
+.mega-content h5 a {
+  font-weight: 400 !important;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-top: 0;
+}
+
+body.article h1 {
+  font-size: 2.5em;
+  font-family: "DIN-bold", sans-serif;
+  margin-bottom: 15px;
+}
+
+main.article h1 {
+  margin-bottom: 15px;
+}
+
+main.article .hgroup .subtitle {
+  font-family: "DIN-bold", sans-serif;
+  font-size: 2em;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+main.article div.date {
+  display: block;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.h2 {
+  font-size: 2em;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  font-family: "DIN", sans-serif;
+}
+
+h3 {
+  font-size: 1.7em;
+  line-height: 100%;
+}
+
+.h3 {
+  font-size: 1.7em;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  font-family: "DIN-bold", sans-serif;
+}
+
+h4 {
+  font-size: 1.5em;
+  line-height: 100%;
+}
+
+.h4 {
+  font-size: 1.5em;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  font-family: "DIN-bold", sans-serif;
+}
+
+h4 {
+  font-size: 1.3em;
+  line-height: 100%;
+}
+
+.h4 {
+  font-size: 1.3em;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  font-family: "DIN-bold", sans-serif;
+}
+
+h4#componenti-collegio-docenti-allargato,
+h4#funzioni {
+  margin: 20px 0 20px 0;
+}
+
+h2.borderbottom,
+h3.borderbottom,
+h4.borderbottom {
+  border-bottom: 1px solid;
+  padding-bottom: 0.2em;
+  margin: 20px 0 20px 0;
+}
+
+/* stile globale link */
+a {
+  font-weight: 600 !important;
+  /*letter-spacing: -.02em;*/
+  text-decoration: none;
+}
+
+a.dropdown-item {
+  font-weight: 400 !important;
+  /*letter-spacing: -.02em;*/
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+a.no-underline {
+  text-decoration: none !important;
+}
+
+a.external-link {
+  padding-right: 1.5em;
+  /*white-space: nowrap;*/
+}
+
+a.external-link::after {
+  display: inline-block;
+  content: "\00a0\f35d";
+  color: #999;
+  font-size: 0.8em;
+  font-family: "Font Awesome 5 Free";
+  margin-right: -1.8em;
+  text-indent: 0;
+  position: relative;
+  top: -0.1em;
+  left: 2px;
+}
+
+a.external-link.noicon {
+  padding-right: 1rem;
+}
+
+a.external-link.noicon::after {
+  display: none;
+}
+
+/* section */
+section {
+  padding: 20px 0;
+}
+
+/* custom header */
+header.custom-header {
+  min-height: 200px;
+  background-color: white;
+}
+
+
+/* mini fix pulsante cerca */
+div.cerca {
+  margin-top: 4px;
+}
+
+/* social */
+div.social {
+  margin-top: 18px;
+  text-align: right;
+  margin-bottom: 18px;
+}
+
+div.social a {
+  margin: 0 5px;
+}
+
+div.social a {
+  font-size: 23px;
+}
+
+div.social.footer {
+  text-align: left;
+}
+
+div.social.footer a {
+  font-size: 20px;
+}
+
+div.info-footer {
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.end-footer {
+  text-align: center;
+  padding-top: 70px;
+}
+
+.end-footer small {
+  font-size: 0.775em;
+}
+
+/* logo - dimensione e posizione */
+div.logo #logo-img {
+  max-width: 320px;
+}
+
+body.fse div.logo #logo-img {
+  max-width: 230px;
+}
+
+body.psicologia div.logo #logo-img {
+  max-width: 330px;
+}
+
+body.fsc div.logo #logo-img {
+  max-width: 280px;
+}
+
+/* stile megamenu personalizzato */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 1);
+}
+
+.navbar .megamenu {
+  padding: 1rem;
+}
+
+div.container-fluid.nav-contestuale {
+  padding-right: 0;
+}
+
+.nav-link {
+  padding: 0.2em 0.7em;
+}
+
+li.dropdown.custom-dropdown {
+  position: relative;
+}
+
+ul.topnav li:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 20px;
+  width: 1px;
+  top: 9px;
+}
+
+ul.topnav li.no-megamenu:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 20px;
+  width: 1px;
+  top: 8px;
+}
+
+.dropdown-menu h5 {
+  margin-top: 0;
+}
+
+ul.topnav li.first-item::before {
+  display: none;
+}
+
+/* sezione notizie */
+
+h1.title-category,
+h2.title-category,
+h3.title-category,
+h4.title-category,
+h5.title-category,
+h6.title-category {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+figure.immagine-articolo {
+  position: relative;
+}
+
+figcaption.didascalia {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  padding: 4px;
+  text-transform: uppercase;
+  font-family: "DIN-bold";
+  font-size: 28px;
+}
+
+li.nav-item {
+  margin-top: 4px;
+}
+
+figure.first figcaption.didascalia {
+  padding: 9px;
+  font-size: 40px;
+}
+
+section.home-articles article .headline p.abstract,
+section#articles.notizie .headline p.abstract,
+section#articles.search-all .headline p.abstract,
+aside div.lista-articoli .headline p.abstract {
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+article.first {
+  font-size: 1.6rem;
+}
+
+/* styling articoli sidebar */
+aside div.lista-articoli figcaption.didascalia {
+  font-size: 30px;
+  padding: 4px;
+}
+
+aside div.lista-articoli figure {
+  margin-bottom: 4px;
+}
+aside div.lista-articoli article .headline.first {
+  margin-top: 4px;
+}
+
+aside a.article-title-link {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+aside div.lista-articoli article .headline.first a {
+  font-size: 25px;
+  line-height: 100%;
+}
+
+section.home-articles article .headline a,
+section#articles.notizie .headline a,
+section#articles.search-all .headline a {
+  margin-bottom: 7px;
+  display: inline-block;
+}
+
+article .headline a {
+  font-family: "DIN";
+  font-size: 1.375em;
+  margin-top: 0.5em;
+}
+
+section.home-articles article {
+  margin-bottom: 20px;
+}
+
+a.altre-notizie {
+  font-family: "DIN";
+}
+
+/* sidebar homepage */
+aside.right-sidebar a.pulsante-sidebar {
+  display: block;
+  clear: both;
+  padding: 38px 10px;
+  margin-bottom: 40px;
+  font-family: "DIN";
+  font-size: 1.7em;
+  background-position: top right; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+a.pulsante-sidebar {
+  position: relative;
+}
+
+a.pulsante-sidebar span {
+  position: absolute;
+  bottom: 3px;
+}
+article .summary {
+  font-size: 0.8em;
+  line-height: 127%;
+  margin-top: 1em;
+}
+
+/* video e galleria fotografica */
+h3.section-media-title {
+  text-transform: uppercase;
+  font-family: "DIN-bold";
+  font-size: 36px;
+  margin-bottom: 9px;
+  margin-top: 28px;
+}
+
+h4.media-title {
+  font-size: 30px;
+  font-family: "DIN-bold";
+  margin: 5px 0;
+}
+/* fine video e galleria fotografica */
+
+/* iscrizione newsletter - testi e form */
+h1.iscrizione-newsletter {
+  font-size: 48px;
+  font-family: "DIN";
+  letter-spacing: 1px;
+  margin: 32px 0;
+}
+
+h1.iscrizione-newsletter > span#iscriviti {
+  font-family: "DIN-bold";
+  color: black;
+}
+h1.iscrizione-newsletter > span#alla {
+  color: black;
+}
+h1.iscrizione-newsletter > span#newsletter {
+  font-family: "DIN-bold";
+  color: #bb1931;
+}
+
+/* sidebar - calendar events */
+div.calendar-event {
+  border: 1px solid #999;
+  padding: 30px;
+  margin-top: 10px;
+}
+
+div.calendar-event h4 {
+  margin-top: 0;
+  margin-bottom: 0.4em;
+}
+
+div.calendar-event p {
+  font-size: 19px;
+  font-family: "DIN";
+}
+
+div.calendar-event div.data-calendario {
+  position: relative;
+  min-height: 93px;
+  width: 64px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+div.calendar-event div.data-calendario span {
+  clear: both;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-family: "DIN";
+  font-size: 24px;
+}
+
+span.month {
+  border-radius: 4px 4px 0 0;
+}
+span.day {
+  border-radius: 0 0 4px 4px;
+  height: 50px;
+}
+
+/* pagine interne - articles e pages  */
+
+main.article h1 {
+  font-size: 46px;
+}
+
+main.article .hgroup .summary,
+main.page .hgroup .summary {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.content {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+a.long-item {
+  line-height: 22px;
+}
+
+h5.dropdown-custom {
+  padding-left: 10px;
+  margin-top: 9px;
+  margin-bottom: 0;
+}
+
+span#aumentarientro {
+  padding-left: 10px;
+}
+
+/* ******************  PAGINA CURRICOLO ***************** */
+
+.curricolo {
+  font-size: 0.9em;
+}
+
+.curricolo h2 {
+  margin: 0 0 0.5em 0;
+}
+
+.curricolo .panel-section > div {
+  margin-bottom: 50px;
+}
+
+.curricolo .panel-menu li.hidden {
+  display: none;
+}
+
+.curricolo .panel-section {
+  min-height: 0;
+  margin-bottom: 50px;
+}
+
+.curricolo .panel-section ul,
+.curricolo .panel-section ol {
+  margin-left: 2em;
+}
+
+.curricolo .infocurricolo {
+  margin-left: 50%;
+}
+
+.curricolo .infocurricolo td,
+.curricolo .infocurricolo th {
+  padding: 1px 10px;
+}
+
+.curricolo .infocurricolo th {
+  font-weight: bold;
+  text-align: left;
+}
+
+.curricolo .attivita {
+  font-size: 1.1em;
+  line-height: 140%;
+  font-weight: bold;
+  margin: 1em 0 0.5em 0;
+  border-bottom: 1px solid;
+}
+
+.curricolo .sottogruppo {
+  font-size: 1.2em;
+  margin: 1em 0 0.5em 2em;
+}
+
+.curricolo .sottosottogruppo {
+  font-size: 1em;
+  margin: 1em 0 0.5em 4em;
+  font-weight: bold;
+}
+
+.curricolo .corso {
+  margin: 0 0 0.3em 10em;
+  text-indent: -2em;
+  line-height: 130%;
+  clear: both;
+  cursor: pointer;
+}
+
+.curricolo .corso:before {
+  content: attr(data-cod) ".";
+  /*width: 1em;*/
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.curricolo .ects {
+  float: right;
+  margin: 0 10px 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0.4;
+}
+
+.curricolo .corso .ects {
+  margin: 0 100px 0 10px;
+}
+
+.curricolo .oppure {
+  margin: 0 0 0.5em 15em;
+  clear: both;
+  font-style: italic;
+}
+
+.curricolo .descrizioneattivita {
+  font-size: 1em;
+  margin: -0.5em 0 1em 0;
+}
+
+.curricolo .prova,
+.curricolo .corsononattivo {
+  margin: 0 0 0.5em 9em;
+  clear: both;
+}
+
+.curricolo ul,
+.curricolo ol {
+  margin-left: 2em;
+}
+
+div.curricolo div.panel-menu ul {
+  margin-bottom: 0;
+}
+/* ============ fine curricolo ========== */
+
+/* FSC - Organi di facoltà */
+div.avatar img {
+  max-height: 300px;
+}
+
+ul.elencoincarichi {
+  margin: 0.5em 0 1em -1em !important;
+}
+
+ul.elencoincarichi.consiglio-facolta {
+  margin: 0.5em 0 1em 1em !important;
+}
+
+ul.elencoincarichi.consiglio-facolta li div.nomepersona {
+  margin: 10px 0;
+}
+
+ul.elencoincarichi li:before {
+  display: none !important;
+}
+
+h2#consiglio {
+  margin-top: 30px;
+}
+
+/* ============ pagina organi facolta =========== */
+
+div.organi-facolta div.card {
+  min-height: 440px;
+  width: 15rem;
+}
+
+.box {
+  padding: 20px;
+}
+
+.box-grey {
+  padding: 20px;
+}
+
+/* ========== fine pagina organi facoltà ====== */
+
+/* =========== faq ======= */
+#faq-list .faq-item h2 button {
+  font-size: 22px;
+}
+#faq-list .faq-item div.accordion-body p {
+  font-size: 19px;
+}
+
+/* ============ fine faq =========== */
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+  .navbar .has-megamenu {
+    position: static !important;
+  }
+  .navbar .megamenu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 0;
+  }
+}
+/* ============ desktop view .end// ============ */
+
+/* ============ mobile view ============ */
+@media (max-width: 991px) {
+  .navbar.fixed-top .navbar-collapse,
+  .navbar.sticky-top .navbar-collapse {
+    overflow-y: auto;
+    max-height: 90vh;
+    margin-top: 10px;
+  }
+}
+
+/* centratura manuale logo footer - mobile */
+@media screen and (max-width: 480px) {
+  .logo-ups-footer {
+    display: block;
+    margin: 0 auto;
+  }
+  figure.first figcaption.didascalia {
+    font-size: 28px;
+    padding: 5px;
+  }
+
+  ul.topnav li:before,
+  ul.topnav li.no-megamenu:before {
+    display: none;
+  }
+
+  .dropdown-menu .mega-content .container-fluid {
+    padding: 0;
+  }
+
+  div.social {
+    text-align: center;
+  }
+
+  div.logo #logo-img {
+    text-align: center;
+    margin: 5px auto;
+    display: block;
+  }
+
+  div.menu-contestuale {
+    float: none;
+  }
+
+  .accordion-header {
+    margin-top: 0;
+  }
+
+  div.menu-facolta {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  div.organi-facolta div.card {
+    min-height: 440px;
+    width: 14rem;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  #offerta-formativa {
+    width: 1100px;
+  }
+  #ricerca {
+    width: 1090px;
+  }
+  #studenti, #docenti {
+    width: 660px;
+  }
+  #universita {
+    width: 1300px;
+  }
+
+  header.scrolled div.social.cerca {
+  }
+  header.scrolled div.logo #logo-img {
+  }
+  header.scrolled {
+  }
+}
+/* ============ mobile view .end// ============ */
+
+/* ============= customizzazioni relative a singole facoltà ============= */
+body.filosofia li#nav-struttura {
+  display: none;
+}
+
+/* customizzazioni relative a singole pagine */
+
+/* post-lauream - id 1723 */
+main.page#page-1723 h2,
+main.page#page-1723 h3,
+main.page#page-1723 h4,
+main.page#page-1635 h2,
+main.page#page-1635 h3,
+main.page#page-1635 h4 {
+  margin-top: 45px;
+}
+/* fse - corsi alta formazione - id 4317 */
+div.pageid-4317 h4 {
+  margin-top: 0px;
+}
+div.pageid-4317 p {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+div.pageid-4954 h4 {
+  margin-top: 15px;
+}
+
+div.page-pixelfabrica-code h4 {
+  margin-top: 0px;
+}
+
+div.page-pixelfabrica-code img {
+  aspect-ratio: 16/9;
+}
+
+div.pageid-4954 div.card figure {
+  margin: 0 !important;
+}
+
+/* impostazione classe per iframe PDF */
+iframe.pdfviewer {
+  width: 100%;
+  height: 800px;
+}
+
+a.flex-prev::before {
+  font-family: "flexslider-icon";
+  font-size: 35px;
+  display: inline-block;
+  content: "\F001";
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+div#centri hr {
+  margin: 15px;
+}
+
+.notizie-flash.sidebar h3 {
+  margin-top: 0;
+}
+
+.panel-section {
+  padding: 25px 2em 3em 2em;
+  min-height: 700px;
+}
+
+/* accordion personalizzato per fsc - pagina 5805 - social media essentials */
+
+div#social-media-essential button.accordion-button {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 480px) {
+  .icon.mail::before,
+  .icon.phone::before,
+  .icon.web::before {
+    position: absolute;
+  }
+  .contatti ul li span {
+    overflow-wrap: break-word;
+    margin-left: 30px;
+  }
+
+  .contatti li {
+    text-indent: 0;
+  }
+  .contatti ul {
+    margin-left: 0.75em;
+    padding-left: 0.75em;
+  }
+
+  li.icon::before {
+    margin-left: 0;
+  }
+  main#page-6338 .accordion-button {
+    font-size: 1.5rem;
+  }
+}
+li.icon.web::before {
+  content: "\f0ac";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+li.icon.phone span {
+  font-weight: 400;
+}
+
+/* Stile finestra modale */
+div.modal-content p {
+  font-family: "source-sans-pro", "Source Sans Unisal", sans-serif;
+}
+
+div.lang-selector a {
+  font-size: 15px !important;
+  margin: 0;
+  color: #787677;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+div.lang-selector {
+  margin-top: 6px;
+}
+
+footer.grey-footer {
+  border-radius: 4px;
+}
+
+/* CSS particolare per pagina 6338 */
+h5.master-title,
+h4.master-title {
+  margin: 0 !important;
+}
+
+main#page-6338 h3,
+main#page-6338 h4,
+main#page-6338 h1 {
+  margin: 6px 0;
+}
+
+main#page-6338 .content ul li {
+  margin: 0;
+}
+
+main#page-6338 .content ul > li:not(.icon)::before {
+  margin: 8px 10px 3px 0;
+  float: left;
+}
+
+main#page-6338 ul {
+  margin: 0;
+}
+
+main#page-6338 h4.titolo-sezione {
+  margin: 24px 0;
+}
+
+main#page-6338 .accordion-button {
+  font-size: 1.5rem;
+}
+
+.curricolo div.panel-menu ul li {
+  display: inline-block !important;
+}
+
+img.logo-ups-footer {
+  height: 150px;
+}
+
+img.offline-logo {
+  height: 150px;
+}
