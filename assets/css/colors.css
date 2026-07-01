@@ -1,0 +1,623 @@
+/* Foglio di stile per colori singole facoltà Pixelfabrica 
+*  Creato il 08/08/2022 da Andrea Coi
+*  Contiene stile per aggiornamento template, mantenendo attivo Unisal
+*  STILE APPLICATO QUANDO IL DOMINIO DI TERZO LIVELLO NON È VALORIZZATO - stile base
+*/
+
+/* colori singole facolta */
+
+body {
+    color: #000;
+}
+
+span.month {
+    background-color: #ac2433;
+    color: white;
+}
+
+span.day {
+    background-color: #999;
+    color: white;
+}
+
+div.calendar-event h4,
+div.calendar-event a {
+    color: #000;
+}
+
+.background-domaincolor {
+    background-color: #ac2433;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ac2433;
+}
+
+a {
+    color: #ac2433;
+}
+
+a:hover {
+    color: #ac2433;
+}
+
+/* footer */
+footer {
+    background-color: #ac2433;
+    color: #FFF;
+}
+
+footer a {
+    color: white;
+}
+
+/* nav */
+.bg-unisal {
+    background-color: #ac2433;
+}
+
+#facolta_nav ul li a {
+    color: #787677 !important;
+}
+
+#facolta_nav ul.dropdown-menu li a {
+    color: #787677;
+    background-color: #fff;
+}
+
+#facolta_nav ul li a:hover {
+    color: #fff !important;
+    background-color: #ac2433 !important;
+}
+
+ul.topnav li:before,
+ul.topnav li.no-megamenu:before {
+    background: #fff;
+}
+
+figcaption.didascalia {
+    background: rgba(172, 36, 51, 0.8);
+    color: rgba(255, 255, 255, 1);
+}
+
+article .headline.first,
+section.home-articles article .headline a,
+section.home-articles article .headline p.abstract,
+article .headline {
+    color: black;
+}
+
+aside.right-sidebar a.pulsante-sidebar {
+    color: white;
+    background-color: #ac2433;
+}
+
+h4.media-title,
+h3.section-media-title {
+    color: black;
+}
+
+h1.iscrizione-newsletter>span#iscriviti {
+    color: black;
+}
+
+h1.iscrizione-newsletter>span#alla {
+    color: black;
+}
+
+h1.iscrizione-newsletter>span#newsletter {
+    color: #ac2433;
+}
+
+.bg-unisal ul li:hover,
+.bg-unisal nav ul li.active {
+    color: #FFF;
+    background-color: #ac2433;
+}
+
+nav .footer {
+    background-color: rgba(34, 51, 68, .2);
+}
+
+nav .tabnav .section {
+    color: #555;
+    border-bottom: 1px solid #555;
+}
+
+nav .tabnav .listitem.icon::before {
+    color: #FFF !important;
+}
+
+.slide .squeal {
+    color: #FFF;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, .8);
+}
+
+header .link-social a:hover {
+    color: #ac2433;
+}
+
+.red {
+    color: #ac2433;
+}
+
+.bgred {
+    background-color: #ac2433;
+}
+
+.darkred {
+    color: #921327;
+}
+
+button,
+.button {
+    background-color: #ac2433;
+    color: #FFF;
+}
+
+a.button,
+a.button:hover,
+a.button .icon::before {
+    color: #FFF !important;
+}
+
+#box-one,
+#box-two,
+#box-three {
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.box-grey {
+    border: 1px solid #AAA;
+    background-color: #EEE;
+}
+
+.form-control:focus {
+    border-color: #ced4da !important;
+}
+
+img.border {
+    border: 1px solid #999;
+}
+
+.grey-background {
+    background-color: #EEEEEE;
+}
+
+header .link-social a {
+    color: rgba(34, 51, 68, .4);
+}
+
+.navmobile .openmenu {
+    background-color: #234;
+    color: #FFF;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #ac2433;
+    background-color: #fff3f6;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ba162f'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: rotate(-180deg);
+}
+
+
+.nav-link {
+    color: #ac2433;
+}
+
+
+.navmobile .openmenu:hover {
+    background-color: #89A;
+}
+
+.btn-sostienici {
+    background-color: rgba(31, 51, 68, .5);
+}
+
+.btn-sostienici:hover {
+    background-color: #ac2433;
+}
+
+.btn-sostienici span {
+    color: white;
+}
+
+.bannerpage .areatitle {
+    color: #FFF;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+}
+
+.subheading {
+    background-color: #ac2433;
+}
+
+.subheading a {
+    color: #FFF;
+}
+
+footer a {
+    color: #FFF;
+}
+
+footer a:hover {
+    color: #FFF;
+}
+
+.content {
+    color: #000;
+}
+
+.wwwwcontent ul>li:not(.icon)::before {
+    color: #ac2433 !important;
+}
+
+.content ul>li:not(.icon)::before {
+    background-color: #ac2433 !important;
+}
+
+.content ul ul li:not(.icon)::before {
+    background-color: #999 !important;
+}
+
+.website img {
+    border: 1px solid #BBB;
+}
+
+.contatti {
+    border: 1px solid rgba(34, 51, 68, .4);
+    background-color: rgba(34, 51, 68, .1);
+}
+
+.headerbox {
+    color: #ac2433;
+}
+
+.notizie .bannerpage,
+.article .bannerpage {
+    background-color: #234;
+}
+
+.notizieshow {
+    /*background:#C2C3C4;*/
+    background-image: linear-gradient(rgba(34, 51, 68, .4), rgba(34, 51, 68, 0));
+}
+
+.notizieshow .subtitle {
+    color: #FFF;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+
+.categorytitle {
+    color: #ac2433;
+}
+
+.navpage {
+    background-color: #ac2433;
+}
+
+.navpage ul.nav li {
+    border-right: 1px solid #a7adb4;
+}
+
+.navpage ul.nav li:first-of-type {
+    border-left: 1px solid #a7adb4;
+}
+
+ul.nav a {
+    color: #FFF !important;
+}
+
+
+ul.nav a:hover {
+    background-color: #ac2433;
+}
+
+.navaside ul.nav li {
+    background-color: #ac2433;
+}
+
+.navaside ul.nav>li {
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+.category-area h2 {
+    color: #FFF;
+    background-color: #ac2433;
+}
+
+.category-area h2 a {
+    color: #FFF;
+}
+
+.category-area h2:hover {
+    background-color: #AAA;
+}
+
+.category-area .articles {
+    background-color: rgba(34, 51, 68, .1) !important;
+}
+
+.bar-continue {
+    background-color: rgba(34, 51, 68, .4);
+}
+
+.bar-continue:hover {
+    background-color: rgba(34, 51, 68, .3);
+}
+
+.bar-continue span {
+    background-color: rgba(34, 51, 68, .3);
+}
+
+.scrollbox {
+    background:
+        /* Shadow covers */
+        linear-gradient(white 30%, rgba(255, 255, 255, 0)),
+        linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+        /* Shadows */
+        radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)),
+        radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+    background:
+        /* Shadow covers */
+        linear-gradient(white 30%, rgba(255, 255, 255, 0)),
+        linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+
+        /* Shadows */
+        radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)),
+        radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+    background-color: white;
+}
+
+.calendario th>div {
+    border: 1px solid #BBB;
+    background-color: #FFF;
+    box-shadow: 5px 5px 10px #CCC;
+}
+
+.calendario .giorno {
+    color: #ac2433;
+}
+
+.calendario .settimana {
+    background-color: #ac2433;
+    color: #FFF;
+}
+
+.calendario h2,
+.calendario h3 {
+    border-bottom: 2px dotted #999;
+}
+
+.calendario img.shadow5 {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5)
+}
+
+.calendario .cliccable.shadow5:hover {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+}
+
+.panel-section {
+    background-color: rgba(102, 119, 136, .1);
+    border: 1px solid rgba(102, 119, 136, .3);
+}
+
+.panel-menu li {
+    border-top: 1px solid rgba(102, 119, 136, .3);
+    border-right: 1px solid rgba(102, 119, 136, .3);
+    color: #036;
+    background: #FFF;
+}
+
+.panel-menu li:first-child {
+    border-left: 1px solid rgba(102, 119, 136, .3);
+}
+
+.panel-menu li.selected {
+    /*border-bottom:1px solid rgba(102,119,136,1);*/
+    border-bottom: 1px solid #c7cdd3;
+    background-color: rgba(102, 119, 136, .1);
+}
+
+.panel-menu li:not(.selected):hover {
+    background-color: rgba(102, 119, 136, .3);
+}
+
+.box-programma {
+    border: 1px solid #AAA;
+    background-color: #EFEFEF;
+}
+
+.programma-orario {
+    color: #ac2433;
+}
+
+.programma-relazione {
+    color: #ac2433;
+}
+
+.icon::before {
+    color: #888;
+}
+
+.btn .icon::before {
+    color: #FFF;
+}
+
+.personcard {
+    border: 1px solid #CCC;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+    background-color: #FFFFFF;
+}
+
+.personcard:hover {
+    background-color: #FAFAFA;
+}
+
+.personcard .card-foto {
+    background-color: transparent;
+}
+
+.cardpersona .fotopersona {
+    background-color: transparent;
+}
+
+[data-codperson]:hover {
+    background-color: #F6F6F6;
+}
+
+.boxpersona .fotopersona {
+    background-color: transparent;
+}
+
+.nameperson:hover {
+    text-decoration: underline dotted #ac2433;
+}
+
+.nameperson {
+    text-decoration: underline dotted #AAA;
+}
+
+[data-codperson]:hover {
+    background-color: #F6F6F6;
+}
+
+.btn-primary,
+.btn-outline-primary {
+    background-color: #ac2433;
+    border-color: transparent;
+    color: #FFF;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover,
+.btn-primary.active,
+.btn-outline-primary.active,
+.btn-primary:active,
+.btn-outline-primary:active,
+.btn-primary:focus,
+.btn-outline-primary:focus {
+    background-color: #921225 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.btn-secondary {
+    background-color: rgba(102, 119, 136, .8);
+    border-color: transparent;
+    color: #FFF;
+    outline: none;
+}
+
+.btn-secondary:hover,
+.btn-secondary.active,
+.btn-secondary:active,
+.btn-secondary:focus {
+    background-color: rgba(102, 119, 136, 1) !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.ups80 {
+    background-color: rgba(255, 255, 255, .8);
+}
+
+.changelanguage a {
+    color: #333333 !important;
+}
+
+.changelanguage img {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.live-streaming img.live {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+}
+
+@media screen and (max-width: 600px) {
+    .live-streaming img.live {
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+    }
+}
+
+/* ******************  PAGINA CURRICOLO ***************** */
+.schema-curricoli {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ac2433;
+}
+
+.curricolo .panel-menu li {
+    color: #FFF;
+    background-color: #999;
+}
+
+.curricolo .panel-menu li.selected {
+    color: #FFF;
+    background-color: #ac2433;
+}
+
+.curricolo .panel-menu li:not(.selected):hover {
+    background-color: rgba(186, 22, 47, 0.9);
+}
+
+
+
+.curricolo .attivita {
+    color: #ac2433;
+}
+
+.curricolo .sottogruppo {
+    color: #ac2433;
+}
+
+.curricolo .sottosottogruppo {
+    color: #ac2433;
+}
+
+.curricolo .corso:hover {
+    color: #ac2433;
+}
+
+.curricolo .ects {
+    color: #123;
+}
+
+/* ============ fine curricolo ========== */
+
+/* docenti */
+.faculty.active {
+    background-color: #ac2433;
+}
+
+.search:hover {
+    cursor: pointer;
+    background-color: #ac2433;
+}
+
+.search.active {
+    background-color: #ac2433;
+}
+
+.selected {
+    background-color: #ac2433;
+    transition: background-color 2s;
+}
+
+.search:hover {
+    background-color: #ac2433;
+}
+
+div.lang-selector a.active {
+    color: #fff;
+    background-color: #ac2433;
+}
