@@ -16,7 +16,14 @@ use Joomla\CMS\Language\Text;
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $app->getDocument()->getWebAssetManager();
 $wa->getRegistry()->addExtensionRegistryFile('mod_menu');
-$wa->usePreset('mod_menu.menu');
+
+// Il preset "mod_menu.menu" non è garantito su tutte le versioni/installazioni
+// Joomla 4-6 (dipende dal manifest media di mod_menu). Non deve bloccare il rendering del menu.
+try {
+    $wa->usePreset('mod_menu.menu');
+} catch (\Exception $e) {
+    // preset non registrato: il menu viene comunque renderizzato, si perde solo l'asset opzionale
+}
 
 $tagId      = $params->get('tag_id', '') ?: 'mod-menu' . $module->id;
 $id         = ' id="' . htmlspecialchars($tagId, ENT_QUOTES, 'UTF-8') . '"';
