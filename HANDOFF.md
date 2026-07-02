@@ -228,7 +228,23 @@ Fix layout barra di ricerca con `awesomplete`. Il label è rimosso dall'override
 
 Il workflow `.github/workflows/release.yml` pubblica automaticamente una GitHub Release con lo zip installabile ogni volta che `<version>` in `templateDetails.xml` cambia su `main`.
 
-**TODO futuro — aggiornamenti OTA:** implementare l'update server Joomla nativo, così i portali derivati potranno ricevere la notifica di nuova versione direttamente dal backend (Sistema → Gestione aggiornamenti), senza scaricare e installare lo zip manualmente. Serve:
-- aggiungere `<updateservers>` a `templateDetails.xml` con un `<server type="extension">` che punta a un `update.xml`
-- pubblicare `update.xml` in un percorso stabile (es. GitHub Pages o raw.githubusercontent.com) con `<downloads>` che rimanda allo zip della release GitHub corrispondente alla versione
-- il workflow di release dovrà rigenerare/aggiornare questo `update.xml` ad ogni release
+### Aggiornamenti OTA
+
+`templateDetails.xml` dichiara un update server Joomla nativo:
+
+```xml
+<updateservers>
+    <server type="extension" priority="1" name="unisal_general Update Site">https://raw.githubusercontent.com/pixelfabricalab/unisal_general/main/update.xml</server>
+</updateservers>
+```
+
+`update.xml` (root del repo) contiene tre blocchi `<update>`, uno per major Joomla (`4\.[0-9]+`, `5\.[0-9]+`, `6\.[0-9]+`), ciascuno con `<version>` e `<downloadurl>` che puntano allo zip dell'ultima release GitHub.
+
+Ad ogni release, il workflow:
+1. crea il tag e la GitHub Release con lo zip
+2. aggiorna `<version>` e `<downloadurl>` in tutti i blocchi di `update.xml`
+3. committa `update.xml` su `main` con `[skip ci]` nel messaggio (evita di far ripartire il workflow in loop)
+
+Su ogni portale derivato con il template installato, Joomla legge `update.xml` da `raw.githubusercontent.com` e mostra la nuova versione in Sistema → Gestione aggiornamenti → Template, senza bisogno di caricare manualmente lo zip.
+
+**Attenzione:** `<name>` in `templateDetails.xml` e `<element>` in `update.xml` devono restare `unisal_general` — se si rinomina il template per un portale figlio, va aggiornato anche `update.xml` (o rimosso l'update server, dato che i portali figli in genere non sono aggiornati OTA da questo repo).
