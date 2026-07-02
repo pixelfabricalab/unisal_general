@@ -187,12 +187,6 @@ $stickyHeader = $this->params->get('stickyHeader') ? 'position-sticky sticky-top
               <jdoc:include type="modules" name="below-article" style="none" />
             </div>
             <?php endif; ?>
-
-            <?php if (false) : ?>
-            <div class="col-12">
-              <a class="btn btn-primary btn-lg altre-notizie" href="/notizie">Altre notizie</a>
-            </div>
-            <?php endif; ?>
           </div>
           <?php if ($hasSidebar) : ?>
           <div class="col-md-4 col-sm-12 mt-md-0 mt-5">
