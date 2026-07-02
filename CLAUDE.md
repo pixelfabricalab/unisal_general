@@ -16,6 +16,7 @@ Template Joomla base per l'ecosistema Unisal, compatibile Joomla 4/5/6 (nessuna 
 - `assets/css/custom.css` — **unico file da modificare** per personalizzare un portale
 - `assets/css/pixelfabrica.css` — stili base condivisi, **non modificare**
 - `assets/css/colors.css` — variabili colore
+- `assets/css/local.css` — override opzionale **escluso dal repo** (`.gitignore`), caricato automaticamente se presente sul server (ultimo `<link>`, vince su tutto); sopravvive agli aggiornamenti OTA
 - `html/` — override dei layout core Joomla (com_content, com_finder, mod_menu, mod_articles, layouts/chromes)
 
 ## Regole chiave (portabilità)

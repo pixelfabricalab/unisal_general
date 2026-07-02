@@ -169,6 +169,18 @@ Fix layout barra di ricerca con `awesomplete`. Il label è rimosso dall'override
 - `.offline-logo { height: auto !important; }` — sovrascrive `height: 150px` hardcoded in `pixelfabrica.css`
 - `.nav-contestuale .dropdown-menu { --bs-dropdown-spacer: 0; margin-top: 0; }` — avvicina la tendina alla voce di menu
 
+### Override locale (`assets/css/local.css`)
+
+File **opzionale, escluso dal repo** via `.gitignore`. Se presente sul filesystem del server, `index.php`, `offline.php`, `error.php` e `component.php` lo includono automaticamente come ultimo `<link>` in `<head>`, dopo `custom.css` (quindi vince su tutto il resto):
+
+```php
+<?php if (is_file(__DIR__ . '/assets/css/local.css')) : ?>
+<link rel="stylesheet" href="<?php echo $template . '/assets/css/local.css' ?>" />
+<?php endif; ?>
+```
+
+Uso previsto: personalizzazioni/hotfix specifici di una singola installazione senza toccare i file versionati. Poiché non fa parte del pacchetto zip né del repo, **sopravvive agli aggiornamenti OTA** (§10) — l'installer Joomla sostituisce solo i file dichiarati in `templateDetails.xml`, mai file estranei presenti sul server.
+
 ---
 
 ## 5. `offline.php` — pagina offline/login

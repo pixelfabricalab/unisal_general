@@ -67,6 +67,14 @@ Dopo l'installazione:
 4. Caricare il logo dal backend
 5. Personalizzare solo `assets/css/custom.css` per le differenze specifiche del portale
 
+## Override CSS locale
+
+`assets/css/local.css` è un file **opzionale, escluso dal repo** (`.gitignore`): se lo si crea manualmente sul server, viene caricato automaticamente dal template come ultimo foglio di stile, dopo `custom.css`, quindi ha sempre la precedenza.
+
+Serve per applicare modifiche puntuali direttamente su un'installazione (hotfix, test, personalizzazioni specifiche di un ambiente) senza toccare i file versionati nel repo — utile in particolare con gli aggiornamenti OTA (vedi `HANDOFF.md` §10), perché un aggiornamento del template sovrascrive solo i file presenti nel pacchetto e non tocca `local.css`, che quindi sopravvive agli update.
+
+Per crearlo basta caricare via FTP/SFTP un file `assets/css/local.css` nella cartella del template installato; se il file non esiste il template funziona normalmente ignorandolo.
+
 Checklist completa in [`HANDOFF.md` §8](HANDOFF.md#8-checklist-nuovo-portale-figlio-da-unisal_general).
 
 ## Regole di portabilità
