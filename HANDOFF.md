@@ -163,6 +163,7 @@ Fix layout barra di ricerca con `awesomplete`. Il label è rimosso dall'override
 | `.feature-block` / `.feature-icon` / `.feature-link` | Blocchi homepage (4 colonne) |
 | `.menu-accordion` | Menu mobile a fisarmonica |
 | `.offline-logo` | Logo nella pagina offline: `width: 325px; max-width: 100%; height: auto !important;` |
+| `.pagination-wrapper` | Stile della paginazione `com_content` (pagina `/notizie`) con palette Unisal — sovrascrive lo stile Bootstrap di default su `.pagination`/`.page-item`/`.page-link` |
 
 ### Fix CSS da non perdere
 - `input.js-finder-search-query` — selettore generico per l'input Smart Search (non usare `#mod-finder-searchword<ID>` che è specifico dell'istanza)
