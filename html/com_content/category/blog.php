@@ -74,7 +74,7 @@ $totalItems = count($items);
                         </a>
                         
                         <?php if ($abstractText) : ?>
-                            <p class="abstract"><?php echo $abstractText; ?></p>
+                            <div class="abstract"><?php echo $abstractText; ?></div>
                         <?php endif; ?>
                     </div>
                 </div>

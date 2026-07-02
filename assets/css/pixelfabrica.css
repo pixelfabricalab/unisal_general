@@ -397,10 +397,10 @@ figure.first figcaption.didascalia {
   font-size: 40px;
 }
 
-section.home-articles article .headline p.abstract,
-section#articles.notizie .headline p.abstract,
-section#articles.search-all .headline p.abstract,
-aside div.lista-articoli .headline p.abstract {
+section.home-articles article .headline div.abstract,
+section#articles.notizie .headline div.abstract,
+section#articles.search-all .headline div.abstract,
+aside div.lista-articoli .headline div.abstract {
   font-size: 1.1rem;
   line-height: 1.3;
 }
