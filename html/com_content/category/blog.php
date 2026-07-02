@@ -106,7 +106,7 @@ $isHomepage  = $activeMenu !== null && $activeMenu->home;
     $notizieItem = $app->getMenu()->getItems('alias', 'notizie', true);
     $notizieLink = $notizieItem ? Route::_('index.php?Itemid=' . $notizieItem->id) : Route::_(Uri::root(true) . '/notizie');
     ?>
-    <div class="col-12 text-center mt-4">
+    <div class="col-12">
         <a class="btn btn-unisal btn-lg altre-notizie" href="<?php echo $notizieLink; ?>">Altre notizie</a>
     </div>
 <?php elseif ($this->pagination->getPagesLinks()) : ?>
