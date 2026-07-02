@@ -67,6 +67,9 @@ $renderModules = $app->getIdentity() && $app->getLanguage();
     <link rel="stylesheet" href="<?php echo $template . '/assets/css/pixelfabrica.css' ?>" />
     <link rel="stylesheet" href="<?php echo $template . '/assets/css/colors.css' ?>" />
     <link rel="stylesheet" href="<?php echo $template . '/assets/css/custom.css' ?>" />
+    <?php if (is_file(__DIR__ . '/assets/css/local.css')) : ?>
+    <link rel="stylesheet" href="<?php echo $template . '/assets/css/local.css' ?>" />
+    <?php endif; ?>
     <jdoc:include type="styles" />
     <jdoc:include type="scripts" />
 </head>
