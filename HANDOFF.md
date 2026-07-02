@@ -24,7 +24,7 @@ Non è legato a un portale specifico: va copiato e rinominato per ogni nuovo por
 2. Aggiornare `templateDetails.xml`: `<name>`, `<description>`, `<creationDate>`
 3. Installare via CLI Joomla: `php cli/joomla.php extension:discover && php cli/joomla.php extension:discover:install --eid=<ID>` — oppure via zip da Sistema → Installa estensione (compatibile Joomla 4/5/6)
 4. Caricare il logo nel backend (Sistema → Template → parametri) — la pagina offline e l'header lo leggono entrambi dai parametri
-5. Personalizzare solo `custom.css` per le differenze specifiche del portale
+5. Per eventuali differenze specifiche del portale (logo fuori misura, richieste di palette diversa, ecc.) creare `assets/css/local.css` sul server — non modificare `custom.css` (§4)
 
 ---
 
@@ -40,9 +40,10 @@ templates/unisal_general/
 ├── templateDetails.xml                # Manifest Joomla
 ├── assets/
 │   ├── css/
-│   │   ├── custom.css                 # Stili custom del portale (modificare qui)
+│   │   ├── custom.css                 # Stili condivisi del template — applicati sempre a tutti i portali, non modificare per esigenze di una singola installazione
 │   │   ├── pixelfabrica.css           # Stili base condivisi — non modificare
 │   │   ├── colors.css                 # Variabili colore
+│   │   ├── local.css                  # Override opzionale per singola installazione — non versionato, vedi §4
 │   │   └── fonts/                     # D-DIN Condensed e Source Sans Pro
 │   └── js/
 │       └── custom.js
@@ -154,6 +155,8 @@ Fix layout barra di ricerca con `awesomplete`. Il label è rimosso dall'override
 
 ## 4. Stili (`assets/css/custom.css`)
 
+**Importante:** `custom.css`, come `pixelfabrica.css`, fa parte del pacchetto del template e viene applicato **sempre e allo stesso modo su tutti i portali** che usano `unisal_general`. Non va modificato per esigenze di una singola installazione (logo con proporzioni diverse dallo standard, richieste di virare la palette da parte del referente del portale, ecc.) — quelle vanno sempre in `assets/css/local.css` (vedi sotto), l'unico file pensato per differenziare un'installazione dal resto dell'ecosistema.
+
 | Classe | Descrizione |
 |--------|-------------|
 | `.px-fluid` | Padding orizzontale responsive con `clamp()` per l'header |
@@ -182,6 +185,11 @@ File **opzionale, escluso dal repo** via `.gitignore`. Se presente sul filesyste
 ```
 
 Uso previsto: personalizzazioni/hotfix specifici di una singola installazione senza toccare i file versionati. Poiché non fa parte del pacchetto zip né del repo, **sopravvive agli aggiornamenti OTA** (§10) — l'installer Joomla sostituisce solo i file dichiarati in `templateDetails.xml`, mai file estranei presenti sul server.
+
+Casi tipici in cui serve `local.css` (documentati anche in `README.md` "Adeguamenti frequenti in fase di installazione"):
+
+- **Logo fuori misura** — il logo caricato da backend eredita le dimensioni pensate per il logo Unisal "standard"; se quello del portale è più largo/stretto o con proporzioni diverse va ridefinito `div.logo #logo-img` (dimensioni, margini) verificando anche il breakpoint mobile.
+- **Richieste di virare la palette** — capita che il referente del portale chieda una variante cromatica sui pulsanti rispetto al rosso Unisal ufficiale (§9). Prima di assecondarla va fatto presente che si perde la coerenza visiva tra i portali; se confermata, si ridefinisce localmente (es. `.btn-unisal`) senza toccare il template condiviso.
 
 ---
 
@@ -223,7 +231,7 @@ Uso previsto: personalizzazioni/hotfix specifici di una singola installazione se
 - [ ] Installare via CLI: `extension:discover` + `extension:discover:install`
 - [ ] Caricare il logo nel backend → appare automaticamente in header e pagina offline
 - [ ] Verificare `common_menu.php`: aggiungere il nuovo portale nella funzione `getBaseLink()` se necessario
-- [ ] Personalizzare solo `custom.css` — non toccare `pixelfabrica.css`
+- [ ] Per differenze specifiche del portale (logo fuori misura, palette diversa, ecc.) creare `assets/css/local.css` sul server — non toccare `custom.css` né `pixelfabrica.css` (§4)
 - [ ] Abilitare immagini e introtext nel modulo `mod_articles` se usato in `below-article`
 
 ---

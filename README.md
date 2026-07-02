@@ -77,6 +77,40 @@ Per crearlo basta caricare via FTP/SFTP un file `assets/css/local.css` nella car
 
 Checklist completa in [`HANDOFF.md` §8](HANDOFF.md#8-checklist-nuovo-portale-figlio-da-unisal_general).
 
+## Adeguamenti frequenti in fase di installazione
+
+`pixelfabrica.css` e `custom.css` fanno parte del pacchetto del template e vengono applicati **sempre e a tutti i portali** allo stesso modo: non vanno toccati per esigenze di una singola installazione. Le personalizzazioni specifiche di un portale — logo con proporzioni diverse dallo standard, richieste di chi lo commissiona di scostarsi dalla palette ufficiale, ecc. — sono normali in fase di installazione, ma vanno gestite **esclusivamente in `assets/css/local.css`** (vedi sopra): è l'unico punto pensato per differenziare un'installazione dal resto dell'ecosistema, non è versionato e sopravvive agli aggiornamenti OTA (§10 di `HANDOFF.md`).
+
+**Logo fuori misura.** Il logo caricato da backend eredita le dimensioni di default pensate per il logo Unisal "standard": se il logo del portale è più largo, più stretto o con proporzioni diverse, in genere serve ridefinire `div.logo #logo-img` (larghezza, margini, eventuale allineamento) in `local.css`, verificando sempre il breakpoint mobile:
+
+```css
+div.logo #logo-img {
+  width: 500px !important;
+  margin-top: 35px;
+}
+div.logo #logo-img {
+  max-width: 500px;
+}
+
+@media (max-width: 767.98px) {
+  div.logo #logo-img {
+    max-width: calc(100% - 2rem);
+    width: 100%;
+    height: auto;
+  }
+}
+```
+
+**Richieste di virare la palette.** Capita che il referente del portale chieda una variante cromatica sui pulsanti rispetto al rosso Unisal ufficiale (§ Palette colori). Prima di assecondarla vale la pena far presente che si perde la coerenza visiva tra i portali dell'ecosistema — ma se la richiesta viene confermata, si ridefinisce il pulsante readmore in `local.css`, senza toccare `.btn-unisal` nel template condiviso:
+
+```css
+p.readmore a.btn.btn-unisal {
+  color: #ac2433;
+  background: #fff;
+  border: 3px solid #ac2433;
+}
+```
+
 ## Regole di portabilità
 
 | ✅ Corretto | ❌ Da evitare |
