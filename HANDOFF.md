@@ -250,12 +250,16 @@ Il workflow `.github/workflows/release.yml` pubblica automaticamente una GitHub 
 </updateservers>
 ```
 
-`update.xml` (root del repo) contiene tre blocchi `<update>`, uno per major Joomla (`4\.[0-9]+`, `5\.[0-9]+`, `6\.[0-9]+`), ciascuno con `<version>` e `<downloadurl>` che puntano allo zip dell'ultima release GitHub.
+`update.xml` (root del repo) contiene tre blocchi `<update>`, uno per major Joomla (`4\.[0-9]+`, `5\.[0-9]+`, `6\.[0-9]+`), ciascuno con `<version>`, `<downloadurl>`, `<sha256sum>` e `<changelogurl>` relativi all'ultima release GitHub.
+
+- `<sha256sum>` — checksum SHA-256 dello zip, verificato da Joomla dopo il download: senza questo tag l'update manager mostra l'avviso "Questa estensione non fornisce un checksum per la convalida dell'integrità del file scaricato"
+- `<changelogurl>` — link alla pagina della release GitHub corrispondente (mostrato come "Changelog" nella schermata di aggiornamento)
 
 Ad ogni release, il workflow:
-1. crea il tag e la GitHub Release con lo zip
-2. aggiorna `<version>` e `<downloadurl>` in tutti i blocchi di `update.xml`
-3. committa `update.xml` su `main` con `[skip ci]` nel messaggio (evita di far ripartire il workflow in loop)
+1. crea il tag e la GitHub Release con lo zip, con nel corpo gli ultimi 5 commit come changelog
+2. calcola lo sha256 dello zip
+3. aggiorna `<version>`, `<downloadurl>`, `<sha256sum>` e `<changelogurl>` in tutti i blocchi di `update.xml`
+4. committa `update.xml` su `main` con `[skip ci]` nel messaggio (evita di far ripartire il workflow in loop)
 
 Su ogni portale derivato con il template installato, Joomla legge `update.xml` da `raw.githubusercontent.com` e mostra la nuova versione in Sistema → Gestione aggiornamenti → Template, senza bisogno di caricare manualmente lo zip.
 

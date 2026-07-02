@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Read version from templateDetails.xml
         id: version
@@ -42,6 +44,18 @@ jobs:
             index.php offline.php component.php error.php common_menu.php \
             templateDetails.xml assets html
 
+      - name: Genera changelog (ultimi 5 commit)
+        if: steps.check_tag.outputs.exists == 'false'
+        id: changelog
+        run: |
+          {
+            echo 'body<<CHANGELOG_EOF'
+            echo '## Changelog'
+            git log -5 --pretty=format:'- %s (%h)'
+            echo
+            echo 'CHANGELOG_EOF'
+          } >> "$GITHUB_OUTPUT"
+
       - name: Create GitHub release
         if: steps.check_tag.outputs.exists == 'false'
         uses: softprops/action-gh-release@v2
@@ -50,19 +64,24 @@ jobs:
           name: ${{ steps.version.outputs.tag }}
           target_commitish: ${{ github.sha }}
           files: unisal_general-${{ steps.version.outputs.version }}.zip
-          generate_release_notes: true
+          body: ${{ steps.changelog.outputs.body }}
 
       - name: Update update.xml (OTA)
         if: steps.check_tag.outputs.exists == 'false'
         run: |
           VERSION="${{ steps.version.outputs.version }}"
           TAG="${{ steps.version.outputs.tag }}"
-          DOWNLOAD_URL="https://github.com/${{ github.repository }}/releases/download/${TAG}/unisal_general-${VERSION}.zip"
+          ZIP="unisal_general-${VERSION}.zip"
+          DOWNLOAD_URL="https://github.com/${{ github.repository }}/releases/download/${TAG}/${ZIP}"
+          CHANGELOG_URL="https://github.com/${{ github.repository }}/releases/tag/${TAG}"
+          SHA256=$(sha256sum "$ZIP" | cut -d ' ' -f1)
 
-          # Aggiorna <version> e <downloadurl> in tutti i blocchi <update> del file
+          # Aggiorna <version>, <downloadurl>, <sha256sum> e <changelogurl> in tutti i blocchi <update> del file
           sed -i \
             -e "s#<version>[^<]*</version>#<version>${VERSION}</version>#g" \
             -e "s#<downloadurl type=\"full\" format=\"zip\">[^<]*</downloadurl>#<downloadurl type=\"full\" format=\"zip\">${DOWNLOAD_URL}</downloadurl>#g" \
+            -e "s#<sha256sum>[^<]*</sha256sum>#<sha256sum>${SHA256}</sha256sum>#g" \
+            -e "s#<changelogurl>[^<]*</changelogurl>#<changelogurl>${CHANGELOG_URL}</changelogurl>#g" \
             update.xml
 
       - name: Commit update.xml
