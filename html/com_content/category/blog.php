@@ -6,13 +6,21 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\Uri\Uri;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
 
 // Uniamo gli articoli (lead + intro)
 $items = array_merge($this->lead_items, $this->intro_items);
 $totalItems = count($items);
+
+// In homepage: niente paginazione, mostra il pulsante "Altre notizie" verso /notizie.
+// Sulle altre pagine (es. /notizie): paginazione normale, nessun pulsante.
+$app         = Factory::getApplication();
+$activeMenu  = $app->getMenu()->getActive();
+$isHomepage  = $activeMenu !== null && $activeMenu->home;
 
 ?>
 
@@ -93,7 +101,15 @@ $totalItems = count($items);
     <?php endforeach; ?>
 </div>
 
-<?php if ($this->pagination->getPagesLinks()) : ?>
+<?php if ($isHomepage) : ?>
+    <?php
+    $notizieItem = $app->getMenu()->getItems('alias', 'notizie', true);
+    $notizieLink = $notizieItem ? Route::_('index.php?Itemid=' . $notizieItem->id) : Route::_(Uri::root(true) . '/notizie');
+    ?>
+    <div class="col-12 text-center mt-4">
+        <a class="btn btn-unisal btn-lg altre-notizie" href="<?php echo $notizieLink; ?>">Altre notizie</a>
+    </div>
+<?php elseif ($this->pagination->getPagesLinks()) : ?>
     <div class="com-content-footer pagination-wrapper">
         <?php echo $this->pagination->getPagesLinks(); ?>
     </div>
