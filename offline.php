@@ -38,11 +38,11 @@ $t = $app->getTemplate(true);
 $template = Uri::root(true) . '/templates/' . $t->template;
 // Logo file or site title param
 if ($this->params->get('logoFile')) {
-    $logo = HTMLHelper::_('image', Uri::root(false) . htmlspecialchars($this->params->get('logoFile'), ENT_QUOTES), $sitename, ['loading' => 'eager', 'decoding' => 'async'], false, 0);
+    $logo = HTMLHelper::_('image', Uri::root(false) . htmlspecialchars($this->params->get('logoFile'), ENT_QUOTES), $sitename, ['class' => 'offline-logo', 'loading' => 'eager', 'decoding' => 'async'], false, 0);
 } elseif ($this->params->get('siteTitle')) {
     $logo = '<span title="' . $sitename . '">' . htmlspecialchars($this->params->get('siteTitle'), ENT_COMPAT, 'UTF-8') . '</span>';
 } else {
-    $logo = HTMLHelper::_('image', 'logo.svg', $sitename, ['class' => 'logo d-inline-block', 'loading' => 'eager', 'decoding' => 'async'], true, 0);
+    $logo = HTMLHelper::_('image', 'logo.svg', $sitename, ['class' => 'offline-logo', 'loading' => 'eager', 'decoding' => 'async'], true, 0);
 }
 
 $hasClass = '';
@@ -72,6 +72,9 @@ $stickyHeader = $this->params->get('stickyHeader') ? 'position-sticky sticky-top
     <link rel="stylesheet" href="<?php echo $template . '/assets/css/pixelfabrica.css' ?>" />
     <link rel="stylesheet" href="<?php echo $template . '/assets/css/colors.css' ?>" />
     <link rel="stylesheet" href="<?php echo $template . '/assets/css/custom.css' ?>" />
+    <?php if (is_file(__DIR__ . '/assets/css/local.css')) : ?>
+    <link rel="stylesheet" href="<?php echo $template . '/assets/css/local.css' ?>" />
+    <?php endif; ?>
     <jdoc:include type="styles" />
     <jdoc:include type="scripts" />
 </head>
