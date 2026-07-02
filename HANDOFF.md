@@ -118,8 +118,9 @@ Posizione custom sotto il component, utile per moduli `mod_articles` con estetic
 - Merge `lead_items` + `intro_items` in unico array
 - Primo articolo `col-12`, gli altri `col-md-6`
 - Immagine intro (fallback su fulltext) con `img-fluid w-100`
-- Abstract da `$item->introtext` (HTML preservato)
+- Abstract da `$item->introtext` in un `<div class="abstract">` (non `<p>`, per evitare `<p>` annidati quando l'introtext contiene già paragrafi propri)
 - Readmore con `btn btn-unisal`
+- **Paginazione vs "Altre notizie":** questo layout è condiviso tra homepage e pagina `/notizie` (stesso componente Categoria/Blog). Se il menu attivo è la homepage (`$activeMenu->home`), la lista mostra solo gli articoli configurati nel modulo/menu item (lead+intro, come da parametri backend) seguiti da un pulsante `Altre notizie` che punta al menu item con alias `notizie`; la paginazione nativa di Joomla viene nascosta. Su tutte le altre pagine (inclusa `/notizie`) vale il comportamento standard: paginazione visibile, nessun pulsante. Se non esiste un menu item con alias `notizie`, il link ricade su `/notizie` relativo alla root del sito.
 
 ### 3.2 `html/mod_menu/default.php` e `default_url.php`
 Override critici per il menu Bootstrap. Senza di questi il dropdown si posiziona male.
