@@ -17,6 +17,8 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
 
+define('LOGO_PATH', Uri::base() . '/images/assets/logo.png');
+
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 $app   = Factory::getApplication();
 $input = $app->getInput();
@@ -37,12 +39,11 @@ $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 $t = $app->getTemplate(true);
 $template = Uri::root(true) . '/templates/' . $t->template;
 // Logo file or site title param
-if ($this->params->get('logoFile')) {
-    $logo = HTMLHelper::_('image', Uri::root(false) . htmlspecialchars($this->params->get('logoFile'), ENT_QUOTES), $sitename, ['class' => 'offline-logo', 'loading' => 'eager', 'decoding' => 'async'], false, 0);
-} elseif ($this->params->get('siteTitle')) {
-    $logo = '<span title="' . $sitename . '">' . htmlspecialchars($this->params->get('siteTitle'), ENT_COMPAT, 'UTF-8') . '</span>';
+
+if (file_exists(LOGO_PATH)) {
+  $logo = '<span title="' . $sitename . '">' . htmlspecialchars($this->params->get('siteTitle'), ENT_COMPAT, 'UTF-8') . '</span>';
 } else {
-    $logo = HTMLHelper::_('image', 'logo.svg', $sitename, ['class' => 'offline-logo', 'loading' => 'eager', 'decoding' => 'async'], true, 0);
+  $logo = LOGO_PATH; 
 }
 
 $hasClass = '';
