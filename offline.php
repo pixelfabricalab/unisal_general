@@ -43,7 +43,7 @@ $template = Uri::root(true) . '/templates/' . $t->template;
 if (file_exists(LOGO_PATH)) {
   $logo = '<span title="' . $sitename . '">' . htmlspecialchars($this->params->get('siteTitle'), ENT_COMPAT, 'UTF-8') . '</span>';
 } else {
-  $logo = LOGO_PATH; 
+  $logo = HTMLHelper::_('image', LOGO_PATH, $sitename, ['class' => 'offline-logo', 'loading' => 'eager', 'decoding' => 'async'], true, 0);
 }
 
 $hasClass = '';
