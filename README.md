@@ -110,6 +110,17 @@ p.readmore a.btn.btn-unisal {
   border: 3px solid #ac2433;
 }
 ```
+### Importante!
+Tutte le regole elencate nel file `local.css` **devono** avere un commento con la motivazione che ha portato alla creazione della regola stessa.  
+Es.
+
+```css
+/* Cambio colore pulsante readmore
+ * Richiesto da: Cliente XY
+ * Motivazione: ...
+*/
+```
+Se necessario, inserire anche un riferimento attività o email ricevuta con la richiesta specifica.
 
 ## Regole di portabilità
 
