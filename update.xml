@@ -6,18 +6,18 @@
         <element>unisal_general</element>
         <type>template</type>
         <client>site</client>
-        <version>1.2.3.1</version>
+        <version>1.2.4</version>
         <infourl title="unisal_general su GitHub">https://github.com/pixelfabricalab/unisal_general</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/pixelfabricalab/unisal_general/releases/download/v1.2.3.1/unisal_general-1.2.3.1.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/pixelfabricalab/unisal_general/releases/download/v1.2.4/unisal_general-1.2.4.zip</downloadurl>
         </downloads>
-        <sha256sum>787f717bc0d99bd8873b227445d598aabcd699086d7a27d45ce40ebf4deab3c6</sha256sum>
+        <sha256sum>cd2e5435b4b66fe28befe40d820b0ddb95ae246cc048dd49077779c66e290430</sha256sum>
         <tags>
             <tag>stable</tag>
         </tags>
         <maintainer>Andrea Coi - Pixelfabrica Lab SRL</maintainer>
         <maintainerurl>https://pixelfabrica.it</maintainerurl>
-        <changelogurl>https://github.com/pixelfabricalab/unisal_general/releases/tag/v1.2.3.1</changelogurl>
+        <changelogurl>https://github.com/pixelfabricalab/unisal_general/releases/tag/v1.2.4</changelogurl>
         <targetplatform name="joomla" version="4\.[0-9]+" />
     </update>
     <update>
@@ -26,18 +26,18 @@
         <element>unisal_general</element>
         <type>template</type>
         <client>site</client>
-        <version>1.2.3.1</version>
+        <version>1.2.4</version>
         <infourl title="unisal_general su GitHub">https://github.com/pixelfabricalab/unisal_general</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/pixelfabricalab/unisal_general/releases/download/v1.2.3.1/unisal_general-1.2.3.1.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/pixelfabricalab/unisal_general/releases/download/v1.2.4/unisal_general-1.2.4.zip</downloadurl>
         </downloads>
-        <sha256sum>787f717bc0d99bd8873b227445d598aabcd699086d7a27d45ce40ebf4deab3c6</sha256sum>
+        <sha256sum>cd2e5435b4b66fe28befe40d820b0ddb95ae246cc048dd49077779c66e290430</sha256sum>
         <tags>
             <tag>stable</tag>
         </tags>
         <maintainer>Andrea Coi - Pixelfabrica Lab SRL</maintainer>
         <maintainerurl>https://pixelfabrica.it</maintainerurl>
-        <changelogurl>https://github.com/pixelfabricalab/unisal_general/releases/tag/v1.2.3.1</changelogurl>
+        <changelogurl>https://github.com/pixelfabricalab/unisal_general/releases/tag/v1.2.4</changelogurl>
         <targetplatform name="joomla" version="5\.[0-9]+" />
     </update>
     <update>
@@ -46,18 +46,18 @@
         <element>unisal_general</element>
         <type>template</type>
         <client>site</client>
-        <version>1.2.3.1</version>
+        <version>1.2.4</version>
         <infourl title="unisal_general su GitHub">https://github.com/pixelfabricalab/unisal_general</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/pixelfabricalab/unisal_general/releases/download/v1.2.3.1/unisal_general-1.2.3.1.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/pixelfabricalab/unisal_general/releases/download/v1.2.4/unisal_general-1.2.4.zip</downloadurl>
         </downloads>
-        <sha256sum>787f717bc0d99bd8873b227445d598aabcd699086d7a27d45ce40ebf4deab3c6</sha256sum>
+        <sha256sum>cd2e5435b4b66fe28befe40d820b0ddb95ae246cc048dd49077779c66e290430</sha256sum>
         <tags>
             <tag>stable</tag>
         </tags>
         <maintainer>Andrea Coi - Pixelfabrica Lab SRL</maintainer>
         <maintainerurl>https://pixelfabrica.it</maintainerurl>
-        <changelogurl>https://github.com/pixelfabricalab/unisal_general/releases/tag/v1.2.3.1</changelogurl>
+        <changelogurl>https://github.com/pixelfabricalab/unisal_general/releases/tag/v1.2.4</changelogurl>
         <targetplatform name="joomla" version="6\.[0-9]+" />
     </update>
 </updates>
