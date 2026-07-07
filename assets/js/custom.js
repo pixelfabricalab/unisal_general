@@ -5,6 +5,8 @@ function isDesktop() {
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementsByClassName('icon-search')[0].classList.add('fa-solid', 'fa-magnifying-glass');
 
+  initBs5Galleries();
+
   // Trasforma il menu accordion mobile
   if (!isDesktop()) {
     transformMobileAccordionMenu();
@@ -111,6 +113,55 @@ function transformMobileAccordionMenu() {
         link.setAttribute("aria-expanded", "false");
       });
     }
+  });
+}
+
+/**
+ * Gallery/lightbox usata nel corpo articolo: griglia .bs5-gallery con
+ * .gallery-item cliccabili, abbinata a un modal Bootstrap con un
+ * .carousel interno (indicatori + carousel-item nello stesso ordine
+ * degli item della griglia).
+ */
+function initBs5Galleries() {
+  document.querySelectorAll(".gallery-item").forEach(function (item) {
+    item.style.cursor = "pointer";
+
+    item.addEventListener("click", function () {
+      if (typeof bootstrap === "undefined") return;
+
+      const index = parseInt(item.getAttribute("data-index"), 10) || 0;
+
+      // Il modal associato e' il primo .modal successivo alla griglia
+      // che contiene un .carousel; ogni gallery deve avere il proprio
+      // modal (id diversi) se ce n'e' piu' di una nella stessa pagina.
+      const grid = item.closest(".bs5-gallery") || item.parentElement;
+      let modal = null;
+      let node = grid;
+
+      while (node && node.nextElementSibling) {
+        node = node.nextElementSibling;
+        if (node.matches && node.matches(".modal") && node.querySelector(".carousel")) {
+          modal = node;
+          break;
+        }
+      }
+
+      if (!modal) return;
+
+      const carouselEl = modal.querySelector(".carousel");
+      const slides = carouselEl.querySelectorAll(".carousel-item");
+      const indicators = carouselEl.querySelectorAll(".carousel-indicators button");
+
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle("active", i === index);
+      });
+      indicators.forEach(function (btn, i) {
+        btn.classList.toggle("active", i === index);
+        btn.setAttribute("aria-current", i === index ? "true" : "false");
+      });
+
+      bootstrap.Modal.getOrCreateInstance(modal).show();
+    });
   });
 }
 

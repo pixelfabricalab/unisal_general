@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="template" client="site" method="upgrade">
     <name>unisal_general</name>
-    <version>1.2.3.1</version>
+    <version>1.2.4</version>
     <creationDate>2026-07</creationDate>
     <author>Andrea Coi - Pixelfabrica Lab SRL</author>
     <authorEmail>eurologon@pixelfabrica.it</authorEmail>
