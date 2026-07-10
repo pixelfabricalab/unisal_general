@@ -88,6 +88,14 @@ function transformMobileAccordionMenu() {
       link.setAttribute("aria-controls", collapseId);
       link.classList.add("dropdown-toggle");
 
+      // Il markup di mod_menu applica "dropdown-menu" al primo livello di
+      // sottovoci per il dropdown Bootstrap desktop: quella classe forza
+      // "display: none" finche' l'ul stesso non ha la classe "show", che
+      // pero' qui viene gestita dal wrapper .collapse, non dall'ul.
+      // Va rimossa per non tenere le sottovoci nascoste nell'accordion mobile.
+      submenu.classList.remove("dropdown-menu");
+      submenu.classList.add("mod-menu__sub", "list-unstyled", "small");
+
       // Avvolgi il submenu in un collapse div
       const collapseDiv = document.createElement("div");
       collapseDiv.className = "collapse";
