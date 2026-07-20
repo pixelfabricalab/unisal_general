@@ -400,6 +400,17 @@ div.logo #logo-img {
   transform: scale(1.05);
 }
 
+/* variante: miniature intere senza crop (nessun aspect-ratio forzato) */
+.bs5-gallery--contain .gallery-item {
+  background-color: #f8f9fa;
+}
+
+.bs5-gallery--contain .gallery-item img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 .bs5-gallery .gallery-item .gallery-overlay {
   position: absolute;
   inset: 0;
