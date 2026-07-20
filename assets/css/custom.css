@@ -400,13 +400,15 @@ div.logo #logo-img {
   transform: scale(1.05);
 }
 
-/* variante: miniature intere senza crop (nessun aspect-ratio forzato) */
+/* variante: miniature intere senza crop, cella della griglia comunque
+   allineata a dimensione fissa (l'immagine si adatta dentro, senza tagli) */
 .bs5-gallery--contain .gallery-item {
+  aspect-ratio: 4 / 3;
   background-color: #f8f9fa;
 }
 
 .bs5-gallery--contain .gallery-item img {
-  height: auto;
+  height: 100%;
   aspect-ratio: auto;
   object-fit: contain;
 }
